@@ -8,19 +8,30 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24), 
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch, 
-            children: [
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.green[50]!,
+              Colors.white,
+            ]
+          )
+        ),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24), 
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch, 
+              children: [
               Expanded(
                 flex: 3, 
                 child: Center(
                   child: Lottie.asset(
-                    'assets/animations/lifting.json', // Placeholder weight lifting animation
+                    'assets/animations/lifting.json', // placeholder
                     repeat: true,
                     animate: true,
                   ),
@@ -84,6 +95,7 @@ class WelcomeScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
       ),
     );
   }
